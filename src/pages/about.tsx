@@ -1,5 +1,11 @@
-export default function Home() {
+import Title from "@/components/title";
+
+const About: React.FC = () => {
   return (
-    <h1>About</h1>
-  );
+    <Title>
+      About
+    </Title>
+  )
 }
+
+export default About;

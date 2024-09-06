@@ -1,11 +1,11 @@
 import Title from "@/components/title";
 
-const Hobbies: React.FC = () => {
+const Experiences: React.FC = () => {
   return (
     <Title>
-      Hobbies
+      Experiences
     </Title>
   )
 }
 
-export default Hobbies;
+export default Experiences;
