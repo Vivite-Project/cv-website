@@ -1,4 +1,4 @@
-import Title from '@/components/title';
+import Title from '@/components/atoms/title';
 
 const Hobbies: React.FC = () => {
   return <Title>Hobbies</Title>;

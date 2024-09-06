@@ -1,4 +1,4 @@
-import Layout from '@/components/layout';
+import Layout from '@/components/organisms/layout';
 import '@/styles/globals.css';
 import { AppProps } from 'next/app';
 
