@@ -1,6 +1,6 @@
 import ChevronDownIcon from '@/assets/icons/chevronDownIcon';
 import CloseIcon from '@/assets/icons/closeIcon';
-import Link from '@/components/atoms/link';
+import Link from '@/components/atoms/links/link';
 import { pagesConfig } from '@/configs/pages.config';
 import {
   Popover,

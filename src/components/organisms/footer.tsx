@@ -1,4 +1,4 @@
-import Link from '@/components/atoms/link';
+import Link from '@/components/atoms/links/link';
 import Copyright from '@/components/atoms/copyright';
 import { pagesConfig } from '@/configs/pages.config';
 

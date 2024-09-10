@@ -1,8 +1,8 @@
-import Link from '@/components/atoms/link';
+import Link from '@/components/atoms/links/link';
 import { pagesConfig } from '@/configs/pages.config';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 
 interface NavbarButtonProps {
   children: ReactNode;
