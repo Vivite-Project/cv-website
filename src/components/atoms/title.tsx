@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
 
-interface LayoutProp {
+interface TitleProps {
   children: ReactNode;
 }
 
-const Title: React.FC<LayoutProp> = ({ children }) => {
+const Title: React.FC<TitleProps> = ({ children }) => {
   return (
     <h1 className="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
       {children}
