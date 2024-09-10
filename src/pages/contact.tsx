@@ -1,5 +1,7 @@
-export default function Home() {
-  return (
-    <h1>Contact</h1>
-  );
-}
+import Title from '@/components/atoms/title';
+
+const Contact: React.FC = () => {
+  return <Title>Contact</Title>;
+};
+
+export default Contact;

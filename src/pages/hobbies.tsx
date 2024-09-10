@@ -1,5 +1,7 @@
-export default function Home() {
-  return (
-    <h1>Hobbies</h1>
-  );
-}
+import Title from '@/components/atoms/title';
+
+const Hobbies: React.FC = () => {
+  return <Title>Hobbies</Title>;
+};
+
+export default Hobbies;

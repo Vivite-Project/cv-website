@@ -2,9 +2,9 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 const Document: React.FC = () => {
   return (
-    <Html>
+    <Html lang="en" className="h-full">
       <Head />
-      <body>
+      <body className="h-full">
         <Main />
         <NextScript />
       </body>
