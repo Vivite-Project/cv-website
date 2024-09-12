@@ -1,20 +1,24 @@
-import Link from '@/components/atoms/links/link';
-import { pagesConfig } from '@/configs/pages.config';
-import clsx from 'clsx';
-import { usePathname } from 'next/navigation';
-import { ReactNode } from 'react';
+import { usePathname } from "next/navigation";
+
+import clsx from "clsx";
+
+import Link from "@atoms/links/link";
+import { pagesConfig } from "@configs/pages.config";
 
 interface NavbarButtonProps {
-  children: ReactNode;
+  children: React.ReactNode;
   href: string;
 }
 
 const NavbarButton: React.FC<NavbarButtonProps> = ({ children, href }) => {
   const isActive = usePathname() === href;
-  const className = isActive ? '!text-red-400' : '';
+  const className = isActive ? "!text-red-400" : "";
 
   return (
-    <Link className={clsx('relative block px-3 py-2', className)} href={href}>
+    <Link
+      className={clsx(className, "relative block px-3 py-2")}
+      href={href}
+    >
       {children}
       {isActive && (
         <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-red-400/0 via-red-400/40 to-red-400/0" />

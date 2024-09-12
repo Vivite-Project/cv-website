@@ -1,47 +1,21 @@
-import StaticLink from '@/components/atoms/links/staticLink';
-import Subheading from '@/components/atoms/subheading';
-import Text from '@/components/atoms/text';
-import Title from '@/components/atoms/title';
-import TimePeriod from '@/components/molecules/timePeriod';
+import HeroContainer from "@atoms/containers/heroContainer";
+import Text from "@atoms/typos/text";
+import Title from "@atoms/typos/title";
+import TimelineList from "@organisms/timelineList";
 import {
   experiencesDescriptionConfig,
-  experiencesTextConfig,
+  experiencesTimelinesConfig,
   experiencesTitleConfig,
-} from '@/configs/experiences.config';
+} from "@configs/pages/experiences.config";
 
 const Experiences: React.FC = () => {
   return (
     <div className="flex flex-col gap-16">
-      <div className="flex max-w-2xl flex-col gap-7">
+      <HeroContainer>
         <Title>{experiencesTitleConfig}</Title>
         <Text>{experiencesDescriptionConfig}</Text>
-      </div>
-      <ul className="flex max-w-3xl flex-col md:gap-20 gap-16">
-        {experiencesTextConfig.map((experience) => (
-          <li className="md:grid md:grid-cols-4 md:items-baseline md:border-l md:border-zinc-700/40 md:pl-6 flex flex-col gap-y-16">
-            <TimePeriod
-              className="hidden md:flex"
-              period={{ start: experience.start, end: experience.end }}
-            />
-            {experience.works.map((work) => (
-              <div className="relative flex flex-col gap-2 after:absolute after:-inset-x-4 after:-inset-y-6 after:z-0 after:scale-95 after:bg-zinc-800/50 after:opacity-0 after:transition after:hover:scale-100 after:hover:opacity-100 after:sm:-inset-x-6 after:sm:rounded-2xl md:col-start-2 md:col-end-5">
-                <TimePeriod
-                  className="z-10 md:hidden"
-                  period={{ start: work.start, end: work.end }}
-                />
-                <Subheading className="z-10">{work.title}</Subheading>
-                <Text className="z-10 text-sm">{work.text}</Text>
-                <StaticLink
-                  href={work.link.href}
-                  className="z-10 mt-4 before:absolute before:-inset-x-4 before:-inset-y-6 before:scale-95 before:transition before:hover:scale-100 before:sm:-inset-x-6 before:sm:rounded-2xl"
-                >
-                  {work.link.text}
-                </StaticLink>
-              </div>
-            ))}
-          </li>
-        ))}
-      </ul>
+      </HeroContainer>
+      <TimelineList timelines={experiencesTimelinesConfig} />
     </div>
   );
 };

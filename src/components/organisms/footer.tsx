@@ -1,9 +1,10 @@
-import Link from '@/components/atoms/links/link';
-import Copyright from '@/components/atoms/copyright';
-import { pagesConfig } from '@/configs/pages.config';
+import Link from "@atoms/links/link";
+import Copyright from "@atoms/typos/copyright";
+import { pagesConfig } from "@configs/pages.config";
+import clone from "@helpers/clone";
 
 const Footer: React.FC = () => {
-  const sortedPages = structuredClone(pagesConfig).sort((a, b) => {
+  const sortedPages = clone(pagesConfig).sort((a, b) => {
     return a.name.localeCompare(b.name);
   });
 

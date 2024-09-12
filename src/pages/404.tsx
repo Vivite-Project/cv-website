@@ -1,5 +1,5 @@
-import Title from '@/components/atoms/title';
-import Text from '@/components/atoms/text';
+import Text from "@atoms/typos/text";
+import Title from "@atoms/typos/title";
 
 const NotFound: React.FC = () => {
   return (

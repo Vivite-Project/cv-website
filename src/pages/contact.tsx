@@ -1,4 +1,4 @@
-import Title from '@/components/atoms/title';
+import Title from "@atoms/typos/title";
 
 const Contact: React.FC = () => {
   return <Title>Contact</Title>;

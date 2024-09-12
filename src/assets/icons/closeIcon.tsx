@@ -1,10 +1,12 @@
-interface CloseIconProps {
-  className: string;
-}
+import { IconProps } from "@interfaces/icon";
 
-const CloseIcon: React.FC<CloseIconProps> = ({ className }) => {
+const CloseIcon: React.FC<IconProps> = ({ className }) => {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
         fill="none"

@@ -1,7 +1,3 @@
-import ChevronDownIcon from '@/assets/icons/chevronDownIcon';
-import CloseIcon from '@/assets/icons/closeIcon';
-import Link from '@/components/atoms/links/link';
-import { pagesConfig } from '@/configs/pages.config';
 import {
   Popover,
   PopoverBackdrop,
@@ -9,11 +5,15 @@ import {
   PopoverPanel,
   Transition,
   TransitionChild,
-} from '@headlessui/react';
-import { ReactNode } from 'react';
+} from "@headlessui/react";
+
+import ChevronDownIcon from "@assets/icons/chevronDownIcon";
+import CloseIcon from "@assets/icons/closeIcon";
+import Link from "@atoms/links/link";
+import { pagesConfig } from "@configs/pages.config";
 
 interface NavbarButtonProps {
-  children: ReactNode;
+  children: React.ReactNode;
   href: string;
 }
 
@@ -22,7 +22,10 @@ const NavbarMobileButton: React.FC<NavbarButtonProps> = ({
   href,
 }) => {
   return (
-    <Link className="block py-2 !text-base" href={href}>
+    <Link
+      className="block py-2 !text-base"
+      href={href}
+    >
       {children}
     </Link>
   );
@@ -60,7 +63,10 @@ const NavbarMobile: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-medium text-zinc-400">Navigation</h2>
-              <PopoverButton aria-label="Close menu" className="-m-1 p-1">
+              <PopoverButton
+                aria-label="Close menu"
+                className="-m-1 p-1"
+              >
                 <CloseIcon className="h-6 w-6 text-zinc-400" />
               </PopoverButton>
             </div>

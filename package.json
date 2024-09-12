@@ -6,11 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "prettier": "prettier --write **/*.{json,ts,tsx,css}"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.6",
     "clsx": "^2.1.1",
+    "moment": "^2.30.1",
     "next": "14.2.8",
     "react": "^18",
     "react-dom": "^18"

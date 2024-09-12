@@ -1,23 +1,13 @@
-import ChevronRightIcon from '@/assets/icons/chevronRightIcon';
-import { ReactNode } from 'react';
-import clsx from 'clsx';
+import clsx from "clsx";
+import ChevronRightIcon from "@assets/icons/chevronRightIcon";
+import { LinkProps } from "@interfaces/link";
 
-interface StaticLinkProps {
-  children: ReactNode;
-  className?: string;
-  href: string;
-}
-
-const StaticLink: React.FC<StaticLinkProps> = ({
-  children,
-  href,
-  className,
-}) => {
+const StaticLink: React.FC<LinkProps> = ({ children, className, href }) => {
   return (
     <a
       className={clsx(
         className,
-        'flex items-center gap-1 text-sm font-medium text-red-400'
+        "flex items-center gap-1 text-sm font-medium text-red-400"
       )}
       href={href}
     >

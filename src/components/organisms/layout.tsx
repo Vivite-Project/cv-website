@@ -1,9 +1,8 @@
-import { ReactNode } from 'react';
-import Header from '@/components/organisms/header';
-import Footer from '@/components/organisms/footer';
+import Header from "@organisms/header";
+import Footer from "@organisms/footer";
 
 interface LayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {

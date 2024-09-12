@@ -1,10 +1,12 @@
-interface ChevronDownIconProps {
-  className: string;
-}
+import { IconProps } from "@interfaces/icon";
 
-const ChevronDownIcon: React.FC<ChevronDownIconProps> = ({ className }) => {
+const ChevronDownIcon: React.FC<IconProps> = ({ className }) => {
   return (
-    <svg viewBox="0 0 8 6" aria-hidden="true" className={className}>
+    <svg
+      viewBox="0 0 8 6"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         d="M1.75 1.75 4 4.25l2.25-2.5"
         fill="none"

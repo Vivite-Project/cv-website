@@ -1,10 +1,12 @@
-interface GithubIconProps {
-  className: string;
-}
+import { IconProps } from "@interfaces/icon";
 
-const GithubIcon: React.FC<GithubIconProps> = ({ className }) => {
+const GithubIcon: React.FC<IconProps> = ({ className }) => {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className={className}
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"
