@@ -1,6 +1,7 @@
-import Layout from '@/components/organisms/layout';
-import '@/styles/globals.css';
-import { AppProps } from 'next/app';
+import { AppProps } from "next/app";
+
+import Layout from "@organisms/layout";
+import "@/styles/globals.css";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

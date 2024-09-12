@@ -1,18 +1,12 @@
-import { ReactNode } from 'react';
-import clsx from 'clsx';
+import clsx from "clsx";
+import { LinkProps } from "@interfaces/link";
 
-interface LinkProps {
-  children: ReactNode;
-  className?: string;
-  href: string;
-}
-
-const Link: React.FC<LinkProps> = ({ className, children, href }) => {
+const Link: React.FC<LinkProps> = ({ children, className, href }) => {
   return (
     <a
       className={clsx(
         className,
-        'group text-sm font-medium text-zinc-200 transition hover:text-red-400'
+        "group text-sm font-medium text-zinc-200 transition hover:text-red-400"
       )}
       href={href}
     >

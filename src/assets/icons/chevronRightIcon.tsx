@@ -1,8 +1,6 @@
-interface ChevronRightIconProps {
-  className: string;
-}
+import { IconProps } from "@interfaces/icon";
 
-const ChevronRightIcon: React.FC<ChevronRightIconProps> = ({ className }) => {
+const ChevronRightIcon: React.FC<IconProps> = ({ className }) => {
   return (
     <svg
       viewBox="0 0 16 16"

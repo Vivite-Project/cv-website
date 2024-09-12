@@ -1,5 +1,5 @@
-import Navbar from '@/components/molecules/navbar';
-import NavbarMobile from '../molecules/navbarMobile';
+import Navbar from "@molecules/navbar/navbar";
+import NavbarMobile from "@molecules/navbar/navbarMobile";
 
 const Header: React.FC = () => {
   return (
