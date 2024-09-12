@@ -35,7 +35,7 @@ const About: React.FC = () => {
             href="https://www.linkedin.com/in/axel-virot/"
             icon={LinkedInIcon}
           >
-            Follow on LinkIconedIn
+            Follow on LinkedIn
           </LinkIcon>
         </li>
         <li className="mt-4 border-t border-zinc-700/40 pt-8">
