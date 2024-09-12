@@ -16,32 +16,32 @@ const Experiences: React.FC = () => {
         <Title>{experiencesTitleConfig}</Title>
         <Text>{experiencesDescriptionConfig}</Text>
       </div>
-      <div className="md:border-l md:border-zinc-700/40 md:pl-6">
-        <ul className="flex max-w-3xl flex-col gap-16">
-          {experiencesTextConfig.map((experience) => (
-            <li className="md:grid md:grid-cols-4 md:items-baseline">
-              <TimePeriod
-                className="hidden md:flex"
-                period={{ start: experience.start, end: experience.end }}
-              />
-              <div className="relative flex flex-col gap-2 after:absolute after:-inset-x-4 after:-inset-y-6 after:z-0 after:scale-95 after:bg-zinc-800/50 after:opacity-0 after:transition after:hover:scale-100 after:hover:opacity-100 after:sm:-inset-x-6 after:sm:rounded-2xl md:col-span-3">
+      <ul className="flex max-w-3xl flex-col md:gap-20 gap-16">
+        {experiencesTextConfig.map((experience) => (
+          <li className="md:grid md:grid-cols-4 md:items-baseline md:border-l md:border-zinc-700/40 md:pl-6 flex flex-col gap-y-16">
+            <TimePeriod
+              className="hidden md:flex"
+              period={{ start: experience.start, end: experience.end }}
+            />
+            {experience.works.map((work) => (
+              <div className="relative flex flex-col gap-2 after:absolute after:-inset-x-4 after:-inset-y-6 after:z-0 after:scale-95 after:bg-zinc-800/50 after:opacity-0 after:transition after:hover:scale-100 after:hover:opacity-100 after:sm:-inset-x-6 after:sm:rounded-2xl md:col-start-2 md:col-end-5">
                 <TimePeriod
                   className="z-10 md:hidden"
-                  period={{ start: experience.start, end: experience.end }}
+                  period={{ start: work.start, end: work.end }}
                 />
-                <Subheading className="z-10">{experience.title}</Subheading>
-                <Text className="z-10">{experience.text}</Text>
+                <Subheading className="z-10">{work.title}</Subheading>
+                <Text className="z-10 text-sm">{work.text}</Text>
                 <StaticLink
-                  href={experience.link.href}
+                  href={work.link.href}
                   className="z-10 mt-4 before:absolute before:-inset-x-4 before:-inset-y-6 before:scale-95 before:transition before:hover:scale-100 before:sm:-inset-x-6 before:sm:rounded-2xl"
                 >
-                  {experience.link.text}
+                  {work.link.text}
                 </StaticLink>
               </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+            ))}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
