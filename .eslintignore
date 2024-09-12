@@ -1,0 +1,8 @@
+.cache
+.husky
+.next
+.vscode
+.husky
+package-lock.json
+public
+node_modules
