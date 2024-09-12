@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import clsx from 'clsx';
 
 interface LinkIconProps {
   children: ReactNode;
@@ -8,14 +7,9 @@ interface LinkIconProps {
 }
 
 const LinkIcon: React.FC<LinkIconProps> = ({ children, href, icon: Icon }) => {
-  const iconClass = Icon ? 'group flex gap-4' : '';
-
   return (
     <a
-      className={clsx(
-        iconClass,
-        'group text-sm font-medium text-zinc-200 transition hover:text-red-400'
-      )}
+      className="group flex gap-4 text-sm font-medium text-zinc-200 transition hover:text-red-400"
       href={href}
     >
       {Icon && (
