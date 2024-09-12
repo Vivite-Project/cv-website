@@ -8,8 +8,7 @@ const getBaseUrl = (fullUrl: string) => {
     }
     return baseUrl;
   } catch (error) {
-    console.error("Invalid URL", error);
-    return "";
+    return "error-invalid-url";
   }
 };
 
