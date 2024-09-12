@@ -1,5 +1,3 @@
-.husky
-.cache
 .next
 .vscode
 package-lock.json
