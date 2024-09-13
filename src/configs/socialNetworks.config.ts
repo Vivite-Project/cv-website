@@ -21,7 +21,7 @@ export const socialNetworksConfig: socialNetworkConfig[] = [
     id: 2,
     href: "https://www.linkedin.com/in/axel-virot/",
     icon: LinkedInIcon,
-    text: "Follow on Github",
+    text: "Follow on LinkedIn",
   },
 ];
 
