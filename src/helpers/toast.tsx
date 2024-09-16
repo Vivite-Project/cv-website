@@ -1,8 +1,8 @@
 import React from "react";
 import { Slide, toast } from "react-toastify";
 
-import ErrorIcon from "@/assets/icons/errorIcon";
-import ValidIcon from "@/assets/icons/validIcon";
+import ErrorIcon from "@assets/icons/errorIcon";
+import ValidIcon from "@assets/icons/validIcon";
 
 const CustomErrorToast = ({ content }: { content: string }) => (
   <div className="flex items-center gap-4">

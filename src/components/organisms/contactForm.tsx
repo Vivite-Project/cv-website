@@ -5,7 +5,7 @@ import InputText from "@atoms/forms/inputText";
 import InputTextArea from "@atoms/forms/inputTextArea";
 import SubmitButton from "@atoms/forms/submitButton";
 import { toastError, toastSuccess } from "@helpers/toast";
-import Contact from "@/interfaces/contact";
+import Contact from "@interfaces/contact";
 
 const ContactForm: React.FC = () => {
   const initialValues: Contact = {
