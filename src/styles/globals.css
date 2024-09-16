@@ -14,3 +14,15 @@
 html:not([data-headlessui-focus-visible]) *:focus {
   outline: none !important;
 }
+
+input {
+  color-scheme: dark;
+}
+
+.Toastify__progress-bar--success {
+  @apply bg-teal-400;
+}
+
+.Toastify__progress-bar--error {
+  @apply bg-red-400;
+}
