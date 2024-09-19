@@ -1,0 +1,4 @@
+.gitea/
+.vscode/
+.next/
+node_modules/
