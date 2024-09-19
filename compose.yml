@@ -1,0 +1,18 @@
+services:
+  app:
+    container_name: "cv-website"
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ENV_VARIABLE=production_server_only_variable
+      - NEXT_PUBLIC_ENV_VARIABLE=production_public_variable
+    ports:
+      - 3002:3000
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
