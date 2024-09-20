@@ -1,7 +1,10 @@
 import HeroContainer from "@atoms/containers/heroContainer";
 import Text from "@atoms/typos/text";
 import Title from "@atoms/typos/title";
-import { contactDescriptionConfig, contactTitleConfig } from "@configs/pages/contact.config";
+import {
+  contactDescriptionConfig,
+  contactTitleConfig,
+} from "@configs/pages/contact.config";
 import ContactForm from "@organisms/contactForm";
 
 const Contact: React.FC = () => {

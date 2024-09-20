@@ -17,7 +17,7 @@ const SubmitButton: React.FC<SubmitButtonProps> = ({
       disabled={isSubmitting}
       className={clsx(
         className,
-        "rounded-md bg-zinc-800/90 px-6 py-2 font-semibold text-zinc-100 ring-zinc-400 transition hover:bg-zinc-800 active:bg-zinc-800/80"
+        "rounded-md bg-zinc-800/90 px-6 py-2 font-semibold text-zinc-100 ring-zinc-400 transition hover:bg-zinc-700/50 active:bg-zinc-800/50"
       )}
     >
       {isSubmitting ? "Submitting..." : label}

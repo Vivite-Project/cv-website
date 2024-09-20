@@ -1,3 +1,6 @@
+import { usePathname } from "next/navigation";
+
+import clsx from "clsx";
 import {
   Popover,
   PopoverBackdrop,
@@ -21,9 +24,12 @@ const NavbarMobileButton: React.FC<NavbarButtonProps> = ({
   children,
   href,
 }) => {
+  const isActive = usePathname() === href;
+  const className = isActive ? "!text-red-400" : "";
+
   return (
     <Link
-      className="block py-2 !text-base"
+      className={clsx(className, "block py-2 !text-base")}
       href={href}
     >
       {children}
