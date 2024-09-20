@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="border-t border-zinc-700/40 pb-16 pt-10">
-      <div className="content-container flex justify-between">
+      <div className="content-container flex flex-col justify-between gap-8 sm:flex-row">
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1">
           {sortedPages.map((page) => (
             <li key={page.id}>
@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             </li>
           ))}
         </ul>
-        <Copyright />
+        <Copyright className="self-center" />
       </div>
     </footer>
   );
