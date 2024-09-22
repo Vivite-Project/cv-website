@@ -24,11 +24,11 @@ const ThematicList: React.FC<ThematicListProps> = ({ thematics }) => {
               {thematic.title}
             </Subheading>
           </div>
-          <ul className="flex flex-col gap-y-16">
+          <ul className="flex flex-col gap-y-16 md:col-start-2 md:col-end-5">
             {thematic.articles.map((article) => (
               <li
                 key={article.id}
-                className="relative flex flex-col gap-2 md:col-start-2 md:col-end-5"
+                className="relative flex flex-col gap-2"
               >
                 <HeadingThree>{article.title}</HeadingThree>
                 <Text className="text-sm">{article.description}</Text>
