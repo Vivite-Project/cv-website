@@ -1,15 +1,15 @@
 services:
-  app:
-    container_name: "cv-website"
+  cv-website:
+    image: "ghcr.io/vivite-project/cv-website:main"
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
     environment:
       - ENV_VARIABLE=production_server_only_variable
       - NEXT_PUBLIC_ENV_VARIABLE=production_public_variable
-    ports:
-      - 3002:3000
+    deploy:
+      mode: replicated
+      replicas: 2
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     networks:
       - proxy
 
