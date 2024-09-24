@@ -2,7 +2,7 @@ import PhotoAxelVirot from "@assets/images/photo-axel-virot.jpeg";
 import TiltedImage from "@atoms/images/tiltedImage";
 import Title from "@atoms/typos/title";
 import Text from "@atoms/typos/text";
-import SocialNetworksList from "@molecules/socialNetworkList";
+import SocialNetworksList from "@organisms/lists/socialNetworkList";
 import { aboutTextConfig, aboutTitleConfig } from "@configs/pages/about.config";
 
 const About: React.FC = () => {

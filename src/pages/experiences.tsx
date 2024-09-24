@@ -1,7 +1,7 @@
 import HeroContainer from "@atoms/containers/heroContainer";
 import Text from "@atoms/typos/text";
 import Title from "@atoms/typos/title";
-import TimelineList from "@organisms/timelineList";
+import TimelineList from "@/components/organisms/lists/timelineList";
 import {
   experiencesDescriptionConfig,
   experiencesTimelinesConfig,

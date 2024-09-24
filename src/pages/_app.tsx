@@ -4,7 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "@/styles/globals.css";
 
-import Layout from "@organisms/layout";
+import Layout from "@/components/organisms/layout/layout";
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

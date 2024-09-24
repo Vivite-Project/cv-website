@@ -60,12 +60,10 @@ export const skillsThematicListConfig: Thematic[] = [
         id: 1,
         title: "CSS",
         description: `
-          CSS is used to control the layout and design of web pages, defining
-          elements like colors, fonts, spacing, and positioning. Understanding
-          CSS is essential for creating visually appealing, responsive
-          websites, allowing developers to ensure a consistent and
-          user-friendly experience across devices. Alongside HTML, the stack I
-          utilized the most, even indirectly.`,
+          Understanding CSS is essential for creating visually appealing,
+          responsive websites, allowing developers to ensure a consistent and
+          user-friendly experience across devices. Alongside HTML, it is the
+          stack I utilized the most, even indirectly.`,
       },
       {
         id: 2,
