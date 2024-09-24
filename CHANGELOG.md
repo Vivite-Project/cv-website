@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Removed
 
+## [1.0.1] - 2024-09-24
+
+### Fixed
+
+- Fixed the contact api route by adding env.local in compose.yml
+
+
 ## [1.0.0] - 2024-09-24
 
 ### Added
@@ -18,4 +25,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added the first production ready version of this project
 
 [unreleased]: 
-[0.0.1]: https://github.com/Vivite-Project/cv-website/releases/tag/v1.0.0
+[1.0.1]: https://github.com/Vivite-Project/cv-website/releases/tag/v1.0.1
+[1.0.0]: https://github.com/Vivite-Project/cv-website/releases/tag/v1.0.0
