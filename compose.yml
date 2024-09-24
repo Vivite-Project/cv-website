@@ -2,6 +2,8 @@ services:
   cv-website:
     image: "ghcr.io/vivite-project/cv-website:main"
     restart: always
+    env_file:
+      - ".env.local"
     environment:
       - ENV_VARIABLE=production_server_only_variable
       - NEXT_PUBLIC_ENV_VARIABLE=production_public_variable
