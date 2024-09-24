@@ -1,6 +1,6 @@
-import ThematicList from "@/components/organisms/thematicList";
 import Text from "@atoms/typos/text";
 import Title from "@atoms/typos/title";
+import ThematicList from "@organisms/lists/thematicList";
 import {
   skillsDescriptionConfig,
   skillsThematicListConfig,

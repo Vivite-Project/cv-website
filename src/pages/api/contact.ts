@@ -1,35 +1,39 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: Number(process.env.EMAIL_PORT),
-  secure: process.env.EMAIL_SECURE === "true",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-  tls: {
-    rejectUnauthorized: process.env.EMAIL_TLS_REJECT_UNAUTHORIZED === "true",
-  },
-});
+import TemplateContact from "@/components/organisms/emails/template-contact";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  if (req.method === "POST") {
-    const { firstName, lastName, email, phone, message } = req.body;
+  const emailFrom = process.env.RESEND_FROM || "";
+  const emailTo = process.env.ADMIN_EMAIL || "";
 
-    try {
-      await transporter.sendMail({
-        from: "axel.virot@gmail.com",
-        to: process.env.EMAIL_USER,
-        subject: `Contact Form Submission from ${firstName} ${lastName}`,
-        text: message,
-        html: `<p><strong>First Name:</strong> ${firstName}</p><p><strong>Last Name:</strong> ${lastName}</p><p><strong>Email:</strong> ${email}</p><p><strong>Phone:</strong> ${phone}</p><p><strong>Message:</strong><br>${message}</p>`,
+  if (req.method === "POST") {
+    const { firstName, lastName, email, message } = req.body;
+
+    if (!firstName || !lastName || !email || !message) {
+      return res.status(400).json({
+        error:
+          "Missing required fields: " +
+          (!firstName ? "firstName " : "") +
+          (!lastName ? "lastName " : "") +
+          (!email ? "email " : "") +
+          (!message ? "message " : ""),
       });
-      res.status(200).json({ message: "Message sent successfully" });
-    } catch (error) {
-      res.status(500).json({ message: "Failed to send message" });
     }
+
+    const { data, error } = await resend.emails.send({
+      from: emailFrom,
+      to: [emailTo],
+      subject: "[ViviteProject] Nouvelle prise de contact",
+      react: TemplateContact(req.body),
+    });
+
+    if (error) {
+      return res.status(400).json(error);
+    }
+    res.status(200).json(data);
   } else {
     res.setHeader("Allow", ["POST"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
