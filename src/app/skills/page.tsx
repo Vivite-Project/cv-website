@@ -5,7 +5,7 @@ import {
   skillsDescriptionConfig,
   skillsThematicListConfig,
   skillsTitleConfig,
-} from "@/configs/pages/skills.config";
+} from "@configs/pages/skills.config";
 
 const Experiences: React.FC = () => {
   return (

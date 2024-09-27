@@ -5,7 +5,7 @@ import {
   contactDescriptionConfig,
   contactTitleConfig,
 } from "@configs/pages/contact.config";
-import ContactForm from "@/components/organisms/forms/contactForm";
+import ContactForm from "@organisms/forms/contactForm";
 
 const Contact: React.FC = () => {
   return (

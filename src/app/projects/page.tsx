@@ -6,7 +6,7 @@ import {
   projectsTitleConfig,
 } from "@configs/pages/projects.config";
 import HeroContainer from "@atoms/containers/heroContainer";
-import ProjectList from "@/components/organisms/lists/projectList";
+import ProjectList from "@organisms/lists/projectList";
 
 const Projects: React.FC = () => {
   return (
