@@ -11,15 +11,17 @@
     "prettier": "prettier --write **/*.{json,ts,tsx,css}"
   },
   "dependencies": {
-    "@headlessui/react": "^2.1.6",
+    "@headlessui/react": "0.0.0-insiders.5ca68a9",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
     "moment": "^2.30.1",
-    "next": "^14.2.13",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "^15.0.0-rc.0",
+    "react": "^19.0.0-rc-204a551e-20240926",
+    "react-dom": "^19.0.0-rc-204a551e-20240926",
     "react-toastify": "^10.0.5",
     "resend": "^4.0.0",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -28,12 +30,10 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.8",
+    "eslint-config-next": "v15.0.0-canary.130",
     "eslint-config-prettier": "^9.1.0",
     "postcss": "^8",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.6",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "prettier-plugin-tailwindcss": "^0.6.6"
   }
 }
