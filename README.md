@@ -33,20 +33,26 @@ Go to the project directory
 Install dependencies
 
 ```bash
-  npm install
+  npm install --legacy-peer-deps
 ```
 
 Setup the environment
 
 ```bash
-  cp .env.example .env.local
-  nano .env.local
+  cp .env.example .env
+  nano .env
+```
+
+Start the database
+
+```bash
+  ./start-database.sh
 ```
 
 Start the server
 
 ```bash
-  npm run dev
+  npm run dev --legacy-peer-deps
 ```
 
 ## Deployment
@@ -54,8 +60,8 @@ Start the server
 Setup the environment
 
 ```bash
-  cp .env.example .env.local
-  nano .env.local
+  cp .env.example .env
+  nano .env
 ```
 
 Start the project container

@@ -5,16 +5,16 @@ import {
   projectsConfig,
   projectsTitleConfig,
 } from "@configs/pages/projects.config";
-import HeroContainer from "@atoms/containers/heroContainer";
+import PageHeaderContainer from "@/components/atoms/containers/PageHeaderContainer";
 import ProjectList from "@organisms/lists/projectList";
 
 const Projects: React.FC = () => {
   return (
     <div className="flex flex-col gap-20">
-      <HeroContainer>
+      <PageHeaderContainer>
         <Title>{projectsTitleConfig}</Title>
         <Text>{projectsDescriptionConfig}</Text>
-      </HeroContainer>
+      </PageHeaderContainer>
       <ProjectList projects={projectsConfig} />
     </div>
   );

@@ -1,6 +1,6 @@
 {
-  "name": "personal-website",
-  "version": "0.1.0",
+  "name": "cv-website",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,13 +11,19 @@
     "prettier": "prettier --write **/*.{json,ts,tsx,css}"
   },
   "dependencies": {
-    "@headlessui/react": "0.0.0-insiders.5ca68a9",
+    "@headlessui/react": "^0.0.0-insiders.02b43d0",
+    "@payloadcms/db-mongodb": "^3.0.0-beta.109",
+    "@payloadcms/next": "^3.0.0-beta.109",
+    "@payloadcms/plugin-cloud": "^3.0.0-beta.109",
+    "@payloadcms/richtext-lexical": "^3.0.0-beta.109",
     "clsx": "^2.1.1",
     "formik": "^2.4.6",
+    "graphql": "^16.9.0",
     "moment": "^2.30.1",
-    "next": "^15.0.0-rc.0",
-    "react": "^19.0.0-rc-204a551e-20240926",
-    "react-dom": "^19.0.0-rc-204a551e-20240926",
+    "next": "15.0.0-canary.160",
+    "payload": "^3.0.0-beta.109",
+    "react": "19.0.0-rc-e740d4b1-20240919",
+    "react-dom": "19.0.0-rc-e740d4b1-20240919",
     "react-toastify": "^10.0.5",
     "resend": "^4.0.0",
     "tailwindcss": "^3.4.13",
@@ -27,8 +33,8 @@
   "devDependencies": {
     "@types/node": "^20",
     "@types/nodemailer": "^6.4.15",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react@rc",
     "eslint": "^8",
     "eslint-config-next": "v15.0.0-canary.130",
     "eslint-config-prettier": "^9.1.0",

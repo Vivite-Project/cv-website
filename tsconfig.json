@@ -20,13 +20,15 @@
     "paths": {
       "@/*": ["./src/*"],
       "@assets/*": ["./src/assets/*"],
+      "@collections/*": ["./src/collections/*"],
       "@atoms/*": ["./src/components/atoms/*"],
       "@molecules/*": ["./src/components/molecules/*"],
       "@organisms/*": ["./src/components/organisms/*"],
       "@configs/*": ["./src/configs/*"],
       "@helpers/*": ["./src/helpers/*"],
       "@interfaces/*": ["./src/interfaces/*"],
-      "@styles/*": ["./src/styles"]
+      "@styles/*": ["./src/styles/*"],
+      "@payload-config": ["./src/payload.config.ts"]
     },
     "target": "ES2017"
   },
