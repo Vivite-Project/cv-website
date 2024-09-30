@@ -1,5 +1,6 @@
 .next
 .vscode
 package-lock.json
-public
-node_modules
+/public
+/node_modules
+/data
