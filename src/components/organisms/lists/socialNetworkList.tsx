@@ -1,30 +1,52 @@
-import LinkIcon from "@atoms/links/linkIcon";
-import {
-  mailConfig,
-  socialNetworksConfig,
-} from "@configs/socialNetworks.config";
+import clsx from "clsx";
+import { SocialNetworks } from "@/payload-types";
 
-const SocialNetworksList: React.FC = () => {
+import MailIcon from "@assets/icons/mailIcon";
+import LinkIcon from "@atoms/links/linkIcon";
+import socialMedia from "@configs/socialMedia.config";
+
+interface SocialNetworksListProps {
+  email?: string;
+  socialNetworks?: SocialNetworks;
+}
+
+const SocialNetworksList: React.FC<SocialNetworksListProps> = ({
+  email,
+  socialNetworks,
+}) => {
+  if (!email && (!socialNetworks || socialNetworks.length === 0)) return null;
+
   return (
     <ul className="flex flex-col gap-4 lg:pl-20">
-      {socialNetworksConfig.map((socialNetwork) => (
-        <li key={socialNetwork.id}>
+      {socialNetworks &&
+        socialNetworks.map(
+          (socialNetwork) =>
+            socialNetwork.link && (
+              <li key={socialNetwork.id}>
+                <LinkIcon
+                  href={socialNetwork.link}
+                  icon={socialMedia[socialNetwork.socialMedia].icon}
+                >
+                  {"Follow on " + socialMedia[socialNetwork.socialMedia].name}
+                </LinkIcon>
+              </li>
+            )
+        )}
+      {email && (
+        <li
+          className={clsx({
+            "mt-4 border-t border-zinc-700/40 pt-8":
+              socialNetworks && socialNetworks.length > 0,
+          })}
+        >
           <LinkIcon
-            href={socialNetwork.href}
-            icon={socialNetwork.icon}
+            href={"mailto:" + email}
+            icon={MailIcon}
           >
-            {socialNetwork.text}
+            {email}
           </LinkIcon>
         </li>
-      ))}
-      <li className="mt-4 border-t border-zinc-700/40 pt-8">
-        <LinkIcon
-          href={mailConfig.href}
-          icon={mailConfig.icon}
-        >
-          {mailConfig.text}
-        </LinkIcon>
-      </li>
+      )}
     </ul>
   );
 };

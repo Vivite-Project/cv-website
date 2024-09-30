@@ -6,16 +6,36 @@
  * and re-run `payload generate:types` to regenerate this file.
  */
 
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Paragraphs".
+ */
+export type Paragraphs = {
+  text: string;
+  id?: string | null;
+}[];
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "SocialNetworks".
+ */
+export type SocialNetworks =
+  | {
+      socialMedia: 'github' | 'linkedin';
+      link: string;
+      id?: string | null;
+    }[]
+  | null;
+
 export interface Config {
   auth: {
     users: UserAuthOperations;
   };
   collections: {
-    "users": User;
-    "pages": Page;
-    "payload-locked-documents": PayloadLockedDocument;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    users: User;
+    media: Media;
+    pages: Page;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   db: {
     defaultIDType: string;
@@ -23,7 +43,7 @@ export interface Config {
   globals: {};
   locale: null;
   user: User & {
-    collection: "users";
+    collection: 'users';
   };
 }
 export interface UserAuthOperations {
@@ -63,6 +83,25 @@ export interface User {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "media".
+ */
+export interface Media {
+  id: string;
+  text?: string | null;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
@@ -70,37 +109,26 @@ export interface Page {
   title: string;
   slug: string;
   blocks?:
-    | {
-        Title: string;
-        Description: string;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: "pageHeaderBlock";
-      }[]
+    | (
+        | {
+            title: string;
+            paragraphs: Paragraphs;
+            image?: (string | null) | Media;
+            socialNetworks?: SocialNetworks;
+            email?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'AboutBlock';
+          }
+        | {
+            title: string;
+            description: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'PageHeaderBlock';
+          }
+      )[]
     | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-locked-documents".
- */
-export interface PayloadLockedDocument {
-  id: string;
-  document?:
-    | ({
-        relationTo: "users";
-        value: string | User;
-      } | null)
-    | ({
-        relationTo: "pages";
-        value: string | Page;
-      } | null);
-  globalSlug?: string | null;
-  user: {
-    relationTo: "users";
-    value: string | User;
-  };
   updatedAt: string;
   createdAt: string;
 }
@@ -111,7 +139,7 @@ export interface PayloadLockedDocument {
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: string | User;
   };
   key?: string | null;
@@ -146,6 +174,7 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }

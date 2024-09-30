@@ -1,4 +1,8 @@
-const Pages = {
+import { CollectionConfig } from 'payload';
+import aboutBlock from '@configs/blocks/aboutBlock.config';
+import pageHeaderBlock from '@configs/blocks/pageHeaderBlock.config';
+
+const Pages: CollectionConfig = {
   slug: 'pages',
   fields: [
     {
@@ -16,6 +20,8 @@ const Pages = {
       name: 'blocks', 
       type: 'blocks',
       blocks: [
+        aboutBlock,
+        pageHeaderBlock
       ],
     },
   ],

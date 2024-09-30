@@ -1,19 +1,21 @@
 import Image from "next/image";
 import clsx from "clsx";
-import ImageInterface from "@interfaces/image";
+import { Media } from "@/payload-types";
 
 interface TiltedImageProps {
   className?: string;
-  image: ImageInterface;
+  image: Media;
 }
 
 const TiltedImage: React.FC<TiltedImageProps> = ({ className, image }) => {
   return (
-    <div className={clsx(className, "p-2")}>
+    <div className={clsx(className, "w-72 p-2 lg:w-full")}>
       <Image
-        alt={image.alt}
-        className="aspect-square w-72 rotate-3 rounded-2xl object-cover lg:w-full"
-        src={image.src}
+        alt={image.text ?? ""}
+        className="aspect-square rotate-3 rounded-2xl object-cover"
+        src={image.url ?? ""}
+        width={image.width ?? undefined}
+        height={image.height ?? undefined}
       />
     </div>
   );
