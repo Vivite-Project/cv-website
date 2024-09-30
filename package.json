@@ -11,7 +11,7 @@
     "prettier": "prettier --write **/*.{json,ts,tsx,css}"
   },
   "dependencies": {
-    "@headlessui/react": "^0.0.0-insiders.02b43d0",
+    "@headlessui/react": "^2.1.8",
     "@payloadcms/db-mongodb": "^3.0.0-canary.c69672",
     "@payloadcms/next": "^3.0.0-canary.c696728",
     "@payloadcms/richtext-lexical": "^3.0.0-canary.c696728",
