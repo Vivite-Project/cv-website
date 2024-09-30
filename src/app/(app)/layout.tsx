@@ -16,7 +16,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
       className="h-full"
     >
       <body className="h-full">
-        <div className="flex justify-center bg-black sm:px-8 lg:px-16">
+        <div className="flex min-h-full justify-center bg-black sm:px-8 lg:px-16">
           <div className="flex w-full max-w-[76rem] flex-col bg-zinc-900 ring-1 ring-zinc-300/20">
             <Header />
             <main className="content-container flex-grow py-16 sm:py-32">
