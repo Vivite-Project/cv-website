@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import { copyrightConfig } from "@configs/copyright.config";
+import copyright from "@configs/copyright.config";
 
 interface CopyrightProps {
   className?: string;
@@ -8,9 +8,7 @@ interface CopyrightProps {
 
 const Copyright: React.FC<CopyrightProps> = ({ className }) => {
   return (
-    <p className={clsx(className, "text-sm text-zinc-500")}>
-      {copyrightConfig}
-    </p>
+    <p className={clsx(className, "text-sm text-zinc-500")}>{copyright}</p>
   );
 };
 
