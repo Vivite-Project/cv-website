@@ -1,10 +1,4 @@
-import PageHeaderContainer from "@/components/atoms/containers/PageHeaderContainer";
-import Text from "@atoms/typos/text";
-import Title from "@atoms/typos/title";
-import {
-  contactDescriptionConfig,
-  contactTitleConfig,
-} from "@configs/pages/contact.config";
+
 import ContactForm from "@organisms/forms/contactForm";
 
 const Contact: React.FC = () => {
