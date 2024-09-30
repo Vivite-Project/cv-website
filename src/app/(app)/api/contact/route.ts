@@ -8,8 +8,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const POST = async (request: NextRequest) => {
   const data: Contact = await request.json();
-  const emailFrom = process.env.RESEND_FROM || "";
-  const emailTo = process.env.ADMIN_EMAIL || "";
 
   if (!data.firstName || !data.lastName || !data.email || !data.message) {
     return NextResponse.json(
@@ -26,8 +24,8 @@ export const POST = async (request: NextRequest) => {
   }
 
   const { data: response, error } = await resend.emails.send({
-    from: emailFrom,
-    to: [emailTo],
+    from: process.env.RESEND_FROM || "",
+    to: [process.env.ADMIN_EMAIL || ""],
     subject: "[ViviteProject] Nouvelle prise de contact",
     react: TemplateContact(data),
   });

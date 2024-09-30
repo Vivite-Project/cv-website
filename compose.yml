@@ -1,6 +1,6 @@
 services:
   cv-website:
-    image: "ghcr.io/vivite-project/cv-website:main"
+    build: .
     restart: always
     env_file:
       - ".env.local"
@@ -13,8 +13,26 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
     networks:
-      - proxy
+      - app
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: bd3443ba625c6dff251897af
+    ports:
+      - "27017:27017"
+    volumes:
+      - data:/data/db
+    networks:
+      - app
+
+volumes:
+  data:
+    driver: local
 
 networks:
-  proxy:
-    external: true
+  app:
+    driver: bridge
