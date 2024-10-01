@@ -1,11 +1,16 @@
+import { Page } from "@/payload-types";
+
 import Link from "@atoms/links/link";
 import Copyright from "@atoms/typos/copyright";
-import { pagesConfig } from "@configs/pages.config";
 import clone from "@helpers/clone";
 
-const Footer: React.FC = () => {
-  const sortedPages = clone(pagesConfig).sort((a, b) => {
-    return a.name.localeCompare(b.name);
+interface FooterProps {
+  pages: Page[];
+}
+
+const Footer: React.FC<FooterProps> = ({ pages }) => {
+  const sortedPages = clone(pages).sort((a, b) => {
+    return a.title.localeCompare(b.title);
   });
 
   return (
@@ -14,7 +19,7 @@ const Footer: React.FC = () => {
         <ul className="flex flex-wrap justify-center gap-x-6 gap-y-1">
           {sortedPages.map((page) => (
             <li key={page.id}>
-              <Link href={page.href}>{page.name}</Link>
+              <Link href={"/" + page.slug}>{page.title}</Link>
             </li>
           ))}
         </ul>

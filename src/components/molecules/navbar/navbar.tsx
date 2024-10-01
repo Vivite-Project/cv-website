@@ -3,9 +3,9 @@
 import { usePathname } from "next/navigation";
 
 import clsx from "clsx";
+import { Page } from "@/payload-types";
 
 import Link from "@atoms/links/link";
-import { pagesConfig } from "@configs/pages.config";
 
 interface NavbarButtonProps {
   children: React.ReactNode;
@@ -29,13 +29,17 @@ const NavbarButton: React.FC<NavbarButtonProps> = ({ children, href }) => {
   );
 };
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  pages: Page[];
+}
+
+const Navbar: React.FC<NavbarProps> = ({ pages }) => {
   return (
     <nav className="hidden rounded-full bg-zinc-800/90 px-3 shadow-lg shadow-zinc-800/5 ring-1 ring-white/10 backdrop-blur md:block">
       <ul className="flex">
-        {pagesConfig.map((page) => (
+        {pages.map((page) => (
           <li key={page.id}>
-            <NavbarButton href={page.href}>{page.name}</NavbarButton>
+            <NavbarButton href={"/" + page.slug}>{page.title}</NavbarButton>
           </li>
         ))}
       </ul>

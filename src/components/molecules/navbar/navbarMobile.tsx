@@ -11,11 +11,11 @@ import {
   Transition,
   TransitionChild,
 } from "@headlessui/react";
+import { Page } from "@/payload-types";
 
 import ChevronDownIcon from "@assets/icons/chevronDownIcon";
 import CloseIcon from "@assets/icons/closeIcon";
 import Link from "@atoms/links/link";
-import { pagesConfig } from "@configs/pages.config";
 
 interface NavbarButtonProps {
   children: React.ReactNode;
@@ -39,7 +39,11 @@ const NavbarMobileButton: React.FC<NavbarButtonProps> = ({
   );
 };
 
-const NavbarMobile: React.FC = () => {
+interface NavbarMobileProps {
+  pages: Page[];
+}
+
+const NavbarMobile: React.FC<NavbarMobileProps> = ({ pages }) => {
   return (
     <Popover className="md:hidden">
       <PopoverButton className="group flex items-center rounded-full bg-zinc-800/90 px-4 py-2 text-sm font-medium text-zinc-200 shadow-lg shadow-zinc-800/5 ring-1 ring-white/10 backdrop-blur hover:ring-white/20">
@@ -80,10 +84,10 @@ const NavbarMobile: React.FC = () => {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100/5 text-base text-zinc-300">
-                {pagesConfig.map((page) => (
+                {pages.map((page) => (
                   <li key={page.id}>
-                    <NavbarMobileButton href={page.href}>
-                      {page.name}
+                    <NavbarMobileButton href={"/" + page.slug}>
+                      {page.title}
                     </NavbarMobileButton>
                   </li>
                 ))}

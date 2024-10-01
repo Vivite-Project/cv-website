@@ -17,6 +17,24 @@ const Pages: CollectionConfig = {
       unique: true,
     },
     {
+      name: 'inNavigation',
+      type: 'checkbox',
+      label: 'Include in the navigation',
+      defaultValue: false,
+      required: true,
+    },
+    {
+      name: 'navigationOrder',
+      type: 'number',
+      label: "Navigation order",
+      required: true,
+      admin: {
+        condition: (data) => {
+          return data.inNavigation
+        },
+      }
+    },
+    {
       name: 'blocks', 
       type: 'blocks',
       blocks: [
