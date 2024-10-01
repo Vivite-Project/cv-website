@@ -1,4 +1,3 @@
-
 import ContactForm from "@organisms/forms/contactForm";
 
 const Contact: React.FC = () => {

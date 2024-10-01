@@ -16,7 +16,7 @@ const RootLayout: React.FC<RootLayoutProps> = async ({ children }) => {
   const payload = await getPayloadHMR({ config: configPromise });
 
   const pages = await payload.find({
-    collection: "pages"
+    collection: "pages",
   });
 
   return (

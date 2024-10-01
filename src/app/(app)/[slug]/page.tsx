@@ -29,7 +29,12 @@ const Page: React.FC<PageProps> = async ({ params }) => {
           () => import("@organisms/blocks/" + block.blockType),
           { ssr: true }
         );
-        return <BlockComponent key={block.id} {...block} />;
+        return (
+          <BlockComponent
+            key={block.id}
+            {...block}
+          />
+        );
       })}
     </div>
   );

@@ -13,11 +13,11 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ pages }) => {
-  /* 
-  ** Filter pages to only show pages in navigation
-  ** Sort them by navigation order
-  ** Enforce navigationOrder to be NonNullable
-  */
+  /*
+   ** Filter pages to only show pages in navigation
+   ** Sort them by navigation order
+   ** Enforce navigationOrder to be NonNullable
+   */
   const filteredPages = pages.filter(
     (page) => page.inNavigation && page.navigationOrder
   ) as FilteredPages[];
