@@ -1,6 +1,7 @@
 import { CollectionConfig } from 'payload';
 import aboutBlock from '@configs/blocks/aboutBlock.config';
 import pageHeaderBlock from '@configs/blocks/pageHeaderBlock.config';
+import timelineBlock from '@/configs/blocks/timelineBlock.config';
 
 const Pages: CollectionConfig = {
   slug: 'pages',
@@ -39,7 +40,8 @@ const Pages: CollectionConfig = {
       type: 'blocks',
       blocks: [
         aboutBlock,
-        pageHeaderBlock
+        pageHeaderBlock,
+        timelineBlock
       ],
     },
   ],

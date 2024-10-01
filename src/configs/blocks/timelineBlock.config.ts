@@ -1,0 +1,77 @@
+import { Block } from "payload";
+
+const timelineBlock: Block = {
+  slug: "TimelineBlock",
+  fields: [
+    {
+      name: "timelines",
+      type: "array",
+      required: true,
+      minRows: 1,
+      interfaceName: "Timelines",
+      labels: {
+        singular: "Timeline",
+        plural: "Timeline",
+      },
+      fields: [
+        {
+          name: "events",
+          type: "array",
+          required: true,
+          minRows: 1,
+          interfaceName: "Events",
+          labels: {
+            singular: "Event",
+            plural: "Event",
+          },
+          fields: [
+            {
+              name: "title",
+              type: "text",
+              required: true,
+            },
+            {
+              name: "description",
+              type: "text",
+              required: true,
+            },
+            {
+              name: "link",
+              type: "text",
+              required: true,
+            },
+            {
+              name: "linkLabel",
+              type: "text",
+              required: true,
+            },
+            {
+              name: "startDate",
+              type: "date",
+              required: true,
+              admin: {
+                date: {
+                  pickerAppearance: 'monthOnly',
+                  displayFormat: 'MMMM yyyy',
+                },
+              },
+            },
+            {
+              name: "endDate",
+              type: "date",
+              required: true,
+              admin: {
+                date: {
+                  pickerAppearance: 'monthOnly',
+                  displayFormat: 'MMMM yyyy',
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
+
+export default timelineBlock;

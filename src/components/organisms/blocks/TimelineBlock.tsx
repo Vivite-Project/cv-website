@@ -1,11 +1,12 @@
+import { Timelines } from "@/payload-types";
+
 import StaticLink from "@atoms/links/staticLink";
 import Subheading from "@atoms/typos/subheading";
 import Text from "@atoms/typos/text";
 import TimePeriod from "@molecules/timePeriod";
-import Timeline from "@interfaces/timeline";
 
 interface TimelineListProps {
-  timelines: Timeline[];
+  timelines: Timelines;
 }
 
 const TimelineList: React.FC<TimelineListProps> = ({ timelines }) => {
@@ -18,8 +19,8 @@ const TimelineList: React.FC<TimelineListProps> = ({ timelines }) => {
         >
           <TimePeriod
             className="hidden md:flex"
-            end={timeline.events[0].end}
-            start={timeline.events[timeline.events.length - 1].start}
+            end={timeline.events[0].endDate}
+            start={timeline.events[timeline.events.length - 1].startDate}
           />
           {timeline.events.map((event) => (
             <div
@@ -28,16 +29,16 @@ const TimelineList: React.FC<TimelineListProps> = ({ timelines }) => {
             >
               <TimePeriod
                 className="z-10 md:hidden"
-                end={event.end}
-                start={event.start}
+                end={event.endDate}
+                start={event.startDate}
               />
               <Subheading className="z-10">{event.title}</Subheading>
-              <Text className="z-10 text-sm">{event.text}</Text>
+              <Text className="z-10 text-sm">{event.description}</Text>
               <StaticLink
-                href={event.link.href}
+                href={event.link}
                 className="z-10 mt-4 before:absolute before:-inset-x-4 before:-inset-y-6 before:scale-95 before:transition before:hover:scale-100 before:sm:-inset-x-6 before:sm:rounded-2xl"
               >
-                {event.link.text}
+                {event.linkLabel}
               </StaticLink>
             </div>
           ))}

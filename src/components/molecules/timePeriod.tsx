@@ -3,8 +3,8 @@ import moment from "moment";
 
 interface TimePeriodProps {
   className?: string;
-  end: Date;
-  start: Date;
+  end: string;
+  start: string;
 }
 
 const TimePeriod: React.FC<TimePeriodProps> = ({ className, end, start }) => {

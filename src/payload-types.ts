@@ -20,22 +20,43 @@ export type Paragraphs = {
  */
 export type SocialNetworks =
   | {
-      socialMedia: 'github' | 'linkedin';
+      socialMedia: "github" | "linkedin";
       link: string;
       id?: string | null;
     }[]
   | null;
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Events".
+ */
+export type Events = {
+  title: string;
+  description: string;
+  link: string;
+  linkLabel: string;
+  startDate: string;
+  endDate: string;
+  id?: string | null;
+}[];
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Timelines".
+ */
+export type Timelines = {
+  events: Events;
+  id?: string | null;
+}[];
 
 export interface Config {
   auth: {
     users: UserAuthOperations;
   };
   collections: {
-    users: User;
-    media: Media;
-    pages: Page;
-    'payload-preferences': PayloadPreference;
-    'payload-migrations': PayloadMigration;
+    "users": User;
+    "media": Media;
+    "pages": Page;
+    "payload-preferences": PayloadPreference;
+    "payload-migrations": PayloadMigration;
   };
   db: {
     defaultIDType: string;
@@ -43,7 +64,7 @@ export interface Config {
   globals: {};
   locale: null;
   user: User & {
-    collection: 'users';
+    collection: "users";
   };
 }
 export interface UserAuthOperations {
@@ -120,14 +141,20 @@ export interface Page {
             email?: string | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'AboutBlock';
+            blockType: "AboutBlock";
           }
         | {
             title: string;
             description: string;
             id?: string | null;
             blockName?: string | null;
-            blockType: 'PageHeaderBlock';
+            blockType: "PageHeaderBlock";
+          }
+        | {
+            timelines: Timelines;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: "TimelineBlock";
           }
       )[]
     | null;
@@ -141,7 +168,7 @@ export interface Page {
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: 'users';
+    relationTo: "users";
     value: string | User;
   };
   key?: string | null;
@@ -176,7 +203,6 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-
-declare module 'payload' {
+declare module "payload" {
   export interface GeneratedTypes extends Config {}
 }
