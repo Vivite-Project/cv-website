@@ -20,7 +20,7 @@ export type Paragraphs = {
  */
 export type SocialNetworks =
   | {
-      socialMedia: "github" | "linkedin";
+      socialMedia: 'github' | 'linkedin';
       link: string;
       id?: string | null;
     }[]
@@ -81,11 +81,11 @@ export interface Config {
     users: UserAuthOperations;
   };
   collections: {
-    "users": User;
-    "media": Media;
-    "pages": Page;
-    "payload-preferences": PayloadPreference;
-    "payload-migrations": PayloadMigration;
+    users: User;
+    media: Media;
+    pages: Page;
+    'payload-preferences': PayloadPreference;
+    'payload-migrations': PayloadMigration;
   };
   db: {
     defaultIDType: string;
@@ -93,7 +93,7 @@ export interface Config {
   globals: {};
   locale: null;
   user: User & {
-    collection: "users";
+    collection: 'users';
   };
 }
 export interface UserAuthOperations {
@@ -170,37 +170,37 @@ export interface Page {
             email?: string | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: "aboutBlock";
+            blockType: 'aboutBlock';
           }
         | {
             id?: string | null;
             blockName?: string | null;
-            blockType: "contactFormBlock";
+            blockType: 'contactFormBlock';
           }
         | {
             title: string;
             description: string;
             id?: string | null;
             blockName?: string | null;
-            blockType: "pageHeaderBlock";
+            blockType: 'pageHeaderBlock';
           }
         | {
             projects: Projects;
             id?: string | null;
             blockName?: string | null;
-            blockType: "projectListBlock";
+            blockType: 'projectListBlock';
           }
         | {
             thematics: Thematics;
             id?: string | null;
             blockName?: string | null;
-            blockType: "thematicListBlock";
+            blockType: 'thematicListBlock';
           }
         | {
             timelines: Timelines;
             id?: string | null;
             blockName?: string | null;
-            blockType: "timelineListBlock";
+            blockType: 'timelineListBlock';
           }
       )[]
     | null;
@@ -214,7 +214,7 @@ export interface Page {
 export interface PayloadPreference {
   id: string;
   user: {
-    relationTo: "users";
+    relationTo: 'users';
     value: string | User;
   };
   key?: string | null;
@@ -249,6 +249,7 @@ export interface Auth {
   [k: string]: unknown;
 }
 
-declare module "payload" {
+
+declare module 'payload' {
   export interface GeneratedTypes extends Config {}
 }
