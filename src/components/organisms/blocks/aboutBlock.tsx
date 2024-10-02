@@ -3,7 +3,7 @@ import { SocialNetworks, Media, Paragraphs } from "@/payload-types";
 import TiltedImage from "@atoms/images/tiltedImage";
 import Title from "@atoms/typos/title";
 import Text from "@atoms/typos/text";
-import SocialNetworksList from "@organisms/lists/socialNetworkList";
+import SocialNetworksList from "@molecules/lists/socialNetworkList";
 
 interface AboutBlock {
   title: string;

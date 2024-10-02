@@ -1,8 +1,8 @@
 import { Thematics } from "@/payload-types";
 
+import HeadingThree from "@atoms/typos/headingThree";
 import Subheading from "@atoms/typos/subheading";
 import Text from "@atoms/typos/text";
-import HeadingThree from "@atoms/typos/headingThree";
 
 interface ThematicBlockProps {
   thematics: Thematics;
