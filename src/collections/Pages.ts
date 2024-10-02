@@ -3,8 +3,9 @@ import { CollectionConfig } from 'payload';
 import aboutBlock from '@configs/blocks/aboutBlock.config';
 import contactFormBlock from '@configs/blocks/contactFormBlock.config';
 import pageHeaderBlock from '@configs/blocks/pageHeaderBlock.config';
-import thematicBlock from '@configs/blocks/thematicBlock.config';
-import timelineBlock from '@configs/blocks/timelineBlock.config';
+import projectListBlock from '@configs/blocks/projectListBlock.config';
+import thematicListBlock from '@configs/blocks/thematicListBlock.config';
+import timelineListBlock from '@configs/blocks/timelineListBlock.config';
 
 const Pages: CollectionConfig = {
   slug: 'pages',
@@ -45,8 +46,9 @@ const Pages: CollectionConfig = {
         aboutBlock,
         contactFormBlock,
         pageHeaderBlock,
-        thematicBlock,
-        timelineBlock
+        projectListBlock,
+        thematicListBlock,
+        timelineListBlock
       ],
     },
   ],

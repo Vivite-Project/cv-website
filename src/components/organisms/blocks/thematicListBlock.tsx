@@ -4,11 +4,11 @@ import HeadingThree from "@atoms/typos/headingThree";
 import Subheading from "@atoms/typos/subheading";
 import Text from "@atoms/typos/text";
 
-interface ThematicBlockProps {
+interface ThematicListBlockProps {
   thematics: Thematics;
 }
 
-const ThematicBlock: React.FC<ThematicBlockProps> = ({ thematics }) => {
+const ThematicListBlock: React.FC<ThematicListBlockProps> = ({ thematics }) => {
   return (
     <div className="flex max-w-3xl flex-col gap-16 md:gap-20">
       {thematics.map((thematic) => (
@@ -42,4 +42,4 @@ const ThematicBlock: React.FC<ThematicBlockProps> = ({ thematics }) => {
   );
 };
 
-export default ThematicBlock;
+export default ThematicListBlock;

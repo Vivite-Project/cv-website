@@ -1,7 +1,7 @@
 import { Block } from "payload";
 
-const thematicBlock: Block = {
-  slug: "thematicBlock",
+const thematicListBlock: Block = {
+  slug: "thematicListBlock",
   fields: [
     {
       name: "thematics",
@@ -47,4 +47,4 @@ const thematicBlock: Block = {
   ],
 };
 
-export default thematicBlock;
+export default thematicListBlock;

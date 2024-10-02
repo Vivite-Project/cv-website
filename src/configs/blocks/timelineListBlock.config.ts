@@ -1,7 +1,7 @@
 import { Block } from "payload";
 
-const timelineBlock: Block = {
-  slug: "timelineBlock",
+const timelineListBlock: Block = {
+  slug: "timelineListBlock",
   fields: [
     {
       name: "timelines",
@@ -51,8 +51,8 @@ const timelineBlock: Block = {
               required: true,
               admin: {
                 date: {
-                  pickerAppearance: 'monthOnly',
-                  displayFormat: 'MMMM yyyy',
+                  pickerAppearance: "monthOnly",
+                  displayFormat: "MMMM yyyy",
                 },
               },
             },
@@ -62,8 +62,8 @@ const timelineBlock: Block = {
               required: true,
               admin: {
                 date: {
-                  pickerAppearance: 'monthOnly',
-                  displayFormat: 'MMMM yyyy',
+                  pickerAppearance: "monthOnly",
+                  displayFormat: "MMMM yyyy",
                 },
               },
             },
@@ -74,4 +74,4 @@ const timelineBlock: Block = {
   ],
 };
 
-export default timelineBlock;
+export default timelineListBlock;

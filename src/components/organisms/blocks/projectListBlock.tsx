@@ -1,14 +1,15 @@
+import { Media, Projects } from "@/payload-types";
+
+import RoundImage from "@atoms/images/roundImage";
+import BaseUrlLink from "@atoms/links/baseUrlLink";
 import Subheading from "@atoms/typos/subheading";
 import Text from "@atoms/typos/text";
-import BaseUrlLink from "@atoms/links/baseUrlLink";
-import RoundImage from "@atoms/images/roundImage";
-import Project from "@interfaces/project";
 
-interface ProjectListProps {
-  projects: Project[];
+interface ProjectListBlockProps {
+  projects: Projects;
 }
 
-const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
+const ProjectListBlock: React.FC<ProjectListBlockProps> = ({ projects }) => {
   return (
     <ul className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
       {projects.map((project) => (
@@ -18,12 +19,12 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
         >
           <RoundImage
             className="mb-4"
-            image={project.image}
+            image={project.image as Media}
           />
           <Subheading className="z-10">{project.title}</Subheading>
-          <Text className="z-10 text-sm">{project.text}</Text>
+          <Text className="z-10 text-sm">{project.description}</Text>
           <BaseUrlLink
-            href={project.link.href}
+            href={project.link}
             className="z-10 mt-4 before:absolute before:-inset-x-4 before:-inset-y-6 before:scale-95 before:transition before:hover:scale-100 before:sm:-inset-x-6 before:sm:rounded-2xl"
           />
         </li>
@@ -32,4 +33,4 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
   );
 };
 
-export default ProjectList;
+export default ProjectListBlock;

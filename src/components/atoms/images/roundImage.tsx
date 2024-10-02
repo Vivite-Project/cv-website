@@ -1,10 +1,11 @@
 import Image from "next/image";
+
 import clsx from "clsx";
-import ImageInterface from "@interfaces/image";
+import { Media } from "@/payload-types";
 
 interface RoundImageProps {
   className?: string;
-  image: ImageInterface;
+  image: Media;
 }
 
 const RoundImage: React.FC<RoundImageProps> = ({ className, image }) => {
@@ -16,9 +17,11 @@ const RoundImage: React.FC<RoundImageProps> = ({ className, image }) => {
       )}
     >
       <Image
-        alt={image.alt}
+        alt={image.text ?? ""}
         className="h-8 w-8 rounded-full"
-        src={image.src}
+        src={image.url ?? ""}
+        width={image.width ?? undefined}
+        height={image.height ?? undefined}
       />
     </div>
   );

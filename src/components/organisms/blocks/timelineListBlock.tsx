@@ -5,11 +5,11 @@ import Subheading from "@atoms/typos/subheading";
 import Text from "@atoms/typos/text";
 import TimePeriod from "@molecules/timePeriod";
 
-interface TimelineListProps {
+interface TimelineListBlockProps {
   timelines: Timelines;
 }
 
-const TimelineList: React.FC<TimelineListProps> = ({ timelines }) => {
+const TimelineListBlock: React.FC<TimelineListBlockProps> = ({ timelines }) => {
   return (
     <ul className="flex max-w-3xl flex-col gap-16 md:gap-20">
       {timelines.map((timeline) => (
@@ -48,4 +48,4 @@ const TimelineList: React.FC<TimelineListProps> = ({ timelines }) => {
   );
 };
 
-export default TimelineList;
+export default TimelineListBlock;
