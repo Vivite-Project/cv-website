@@ -162,6 +162,11 @@ export interface Page {
             blockType: "aboutBlock";
           }
         | {
+            id?: string | null;
+            blockName?: string | null;
+            blockType: "contactFormBlock";
+          }
+        | {
             title: string;
             description: string;
             id?: string | null;

@@ -9,7 +9,7 @@ import SubmitButton from "@atoms/forms/submitButton";
 import { toastError, toastSuccess } from "@helpers/toast";
 import Contact from "@interfaces/contact";
 
-const ContactForm: React.FC = () => {
+const ContactFormBlock: React.FC = () => {
   const initialValues: Contact = {
     firstName: "",
     lastName: "",
@@ -101,4 +101,4 @@ const ContactForm: React.FC = () => {
   );
 };
 
-export default ContactForm;
+export default ContactFormBlock;

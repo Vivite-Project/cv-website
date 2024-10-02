@@ -1,5 +1,7 @@
 import { CollectionConfig } from 'payload';
+
 import aboutBlock from '@configs/blocks/aboutBlock.config';
+import contactFormBlock from '@configs/blocks/contactFormBlock.config';
 import pageHeaderBlock from '@configs/blocks/pageHeaderBlock.config';
 import thematicBlock from '@configs/blocks/thematicBlock.config';
 import timelineBlock from '@configs/blocks/timelineBlock.config';
@@ -41,6 +43,7 @@ const Pages: CollectionConfig = {
       type: 'blocks',
       blocks: [
         aboutBlock,
+        contactFormBlock,
         pageHeaderBlock,
         thematicBlock,
         timelineBlock
