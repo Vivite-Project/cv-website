@@ -1,13 +1,14 @@
+import { Thematics } from "@/payload-types";
+
 import Subheading from "@atoms/typos/subheading";
 import Text from "@atoms/typos/text";
-import Thematic from "@interfaces/thematic";
 import HeadingThree from "@atoms/typos/headingThree";
 
-interface ThematicListProps {
-  thematics: Thematic[];
+interface ThematicBlockProps {
+  thematics: Thematics;
 }
 
-const ThematicList: React.FC<ThematicListProps> = ({ thematics }) => {
+const ThematicBlock: React.FC<ThematicBlockProps> = ({ thematics }) => {
   return (
     <div className="flex max-w-3xl flex-col gap-16 md:gap-20">
       {thematics.map((thematic) => (
@@ -21,7 +22,7 @@ const ThematicList: React.FC<ThematicListProps> = ({ thematics }) => {
               className="block h-4 w-0.5 bg-zinc-200 md:hidden"
             />
             <Subheading className="text-sm tracking-normal">
-              {thematic.title}
+              {thematic.name}
             </Subheading>
           </div>
           <ul className="flex flex-col gap-y-16 md:col-start-2 md:col-end-5">
@@ -41,4 +42,4 @@ const ThematicList: React.FC<ThematicListProps> = ({ thematics }) => {
   );
 };
 
-export default ThematicList;
+export default ThematicBlock;
