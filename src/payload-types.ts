@@ -27,6 +27,24 @@ export type SocialNetworks =
   | null;
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Articles".
+ */
+export type Articles = {
+  title: string;
+  description: string;
+  id?: string | null;
+}[];
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Thematics".
+ */
+export type Thematics = {
+  name: string;
+  articles: Articles;
+  id?: string | null;
+}[];
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "Events".
  */
 export type Events = {
@@ -141,20 +159,26 @@ export interface Page {
             email?: string | null;
             id?: string | null;
             blockName?: string | null;
-            blockType: "AboutBlock";
+            blockType: "aboutBlock";
           }
         | {
             title: string;
             description: string;
             id?: string | null;
             blockName?: string | null;
-            blockType: "PageHeaderBlock";
+            blockType: "pageHeaderBlock";
+          }
+        | {
+            thematics: Thematics;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: "thematicBlock";
           }
         | {
             timelines: Timelines;
             id?: string | null;
             blockName?: string | null;
-            blockType: "TimelineBlock";
+            blockType: "timelineBlock";
           }
       )[]
     | null;

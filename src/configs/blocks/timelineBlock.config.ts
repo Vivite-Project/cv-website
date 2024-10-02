@@ -1,7 +1,7 @@
 import { Block } from "payload";
 
 const timelineBlock: Block = {
-  slug: "TimelineBlock",
+  slug: "timelineBlock",
   fields: [
     {
       name: "timelines",
@@ -22,7 +22,7 @@ const timelineBlock: Block = {
           interfaceName: "Events",
           labels: {
             singular: "Event",
-            plural: "Event",
+            plural: "Events",
           },
           fields: [
             {

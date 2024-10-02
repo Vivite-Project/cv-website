@@ -1,7 +1,7 @@
 import { Block } from "payload";
 
 const pageHeaderBlock: Block = {
-  slug: "PageHeaderBlock",
+  slug: "pageHeaderBlock",
   fields: [
     {
       name: "title",

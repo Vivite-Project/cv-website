@@ -1,7 +1,7 @@
 import { Block } from "payload";
 
 const aboutBlock: Block = {
-  slug: "AboutBlock",
+  slug: "aboutBlock",
   fields: [
     {
       name: "title",
