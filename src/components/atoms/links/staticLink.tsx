@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import ChevronRightIcon from "@assets/icons/chevronRightIcon";
-import { LinkProps } from "@interfaces/link";
+import { LinkProps } from "@interfaces/atoms/link";
 
 const StaticLink: React.FC<LinkProps> = ({ children, className, href }) => {
   return (

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { TypoProps } from "@interfaces/typo";
+import { TypoProps } from "@interfaces/atoms/typo";
 
 const HeadingThree: React.FC<TypoProps> = ({ children, className }) => {
   return (

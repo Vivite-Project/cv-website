@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { LinkProps } from "@interfaces/link";
+import { LinkProps } from "@interfaces/atoms/link";
 
 const Link: React.FC<LinkProps> = ({ children, className, href }) => {
   return (

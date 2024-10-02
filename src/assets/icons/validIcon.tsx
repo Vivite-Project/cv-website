@@ -1,4 +1,4 @@
-import { IconProps } from "@interfaces/icon";
+import { IconProps } from "@interfaces/assets/icon";
 
 const ValidIcon: React.FC<IconProps> = ({ className }) => {
   return (
