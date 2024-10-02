@@ -1,4 +1,3 @@
-import React from "react";
 import { Slide, toast } from "react-toastify";
 
 import ErrorIcon from "@assets/icons/errorIcon";
